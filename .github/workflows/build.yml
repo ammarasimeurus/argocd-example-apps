@@ -28,7 +28,7 @@ jobs:
 
     - name: Update deployment.yaml
       run: |
-        sed -i "s#your-dockerhub-username/my-python-app#your-dockerhub-username/my-python-app:${{ github.run_number }}#" deployment.yaml
+        sed -i 's#your-dockerhub-username/my-python-app:latest#ammareurus/testrepo:${{ inputs.tags }}#' deployment.yaml
 
     - name: Commit and push changes
       run: |
